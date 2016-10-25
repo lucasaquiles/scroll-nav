@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Scrooolll ordinária</title>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js
+"></script>
+
+		<style type="text/css" media="screen">
+		body{
+			margin:0; padding: 0;
+		}
+		#scroll-nav{
+			position:fixed;
+			width:100;
+			height:200;
+			right:10;
+			top:50%;
+		}
+		.wrap{
+
+			width:100%;
+			height:690px;
+		}
+
+		.a{
+
+			background-color:#ccc;
+		}
+
+		.b{
+
+			background-color:#c00;
+		}
+
+		.c{
+
+			background-color:#c0c;
+		}
+
+		.d{
+
+			background-color:#00c;
+		}
+		</style>
+
+		<script type="text/javascript">
+
+				jQuery(document).ready(function(){
+						
+						var $ul = jQuery("<ul>");
+						jQuery(".scrollable").each(
+
+							function(){ 
+								
+								$li = jQuery("<li>");
+								$a = jQuery("<a>");
+
+								var id = "#"+jQuery(this).attr("id");
+								$a.html(id);
+								$a.attr("href", id);
+								$a.attr("class", "n-l");
+								$li.append($a);
+
+								$ul.append($li);
+
+							}
+						 );
+
+						jQuery("#scroll-nav").append($ul);	
+
+						jQuery(".n-l").click(function(e){
+
+							var anchor = $(this).attr('href');
+							 $('html,body').animate({
+					        	scrollTop: jQuery(anchor).offset().top},
+					        'slow');
+						});
+				})
+
+		</script>
+	</head>
+
+	<body>
+
+		<div id="scroll-nav" >
+				
+		</div>
+
+		<section id="1" class="scrollable wrap a">
+
+
+		</section>
+
+		</section>
+		<div id="2" class="scrollable wrap b">
+
+
+		</section>
+		</div>
+
+		<div id="3" class="scrollable wrap c">
+
+
+		</div>
+
+		<div id="4" class="scrollable wrap d">
+
+
+		</div>
+
+		<div id="5" class="scrollable wrap ">
+
+
+		</div>
+	</body>
+</html>
